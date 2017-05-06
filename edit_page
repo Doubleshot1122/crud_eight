@@ -1,1 +1,0 @@
-var edit = profile.user_name ? `${profile.user_name}?_method=PUT`: '' 

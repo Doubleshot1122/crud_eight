@@ -1,5 +1,6 @@
 <% layout('index') -%>
 <h1>Address Book</h1>
+<p><%= JSON.stringify(results[0])%></p>
 <div class="container">
   <div class="row">
     <br>
@@ -7,12 +8,23 @@
     <br>
     <hr>
   </div>
+
   <div class="row">
     <div class="col-md-6">
-      <h3>Name</h3>
-      <p>Address 1</p>
-      <p>Address 2</p>
-      <a href="#">DELETE</a>
+      <h3><%= results[0].first_name + " " + results[0].last_name%></h3>
+      <p>Phone: <%= results[0].phone_number%></p>
+      <p>Email: <%= results[0].email_address%></p>
+      <p><%= results[0].line_1 + " " + results[0].line_2%></p>
+      <p><%= results[0].city +  ", " + results[0].state + " " + results[0].zip%></p>
+      <img src="<%= results[0].image_url%>" alt="">
+      <div class="row"><br></div>
+      <form action="/contacts/<%= results[0].cid%>?_method=DELETE" method="POST">
+        <input
+          class="btn btn-sm btn-danger"
+          type="submit"
+          name="delete"
+          value="DELETE">
+      </form>
       <hr>
     </div>
   </div><!-- row end  -->
