@@ -1,7 +1,7 @@
 exports.seed = function(knex) {
-  return knex('adresses').truncate()
+  return knex('addresses').truncate()
     .then(() => {
-      return knex('adresses').insert([
+      return knex('addresses').insert([
         {
             id: 1,
             line_1: '894 Mireille Rue',
@@ -10,7 +10,7 @@ exports.seed = function(knex) {
             zip: '17734'
         },{
             id: 2,
-            line_1: '701 Pamela View'
+            line_1: '701 Pamela View',
             line_2: 'Apt 1001',
             city: 'West Reinholdstad',
             zip: '55179'
