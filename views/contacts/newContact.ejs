@@ -45,9 +45,10 @@
           <div class="col-md-8">
             <label for="savedAddresses">Select an Address</label>
             <div class="row"></div>
-            <select name="savedAddresses">
+            <select id="addressDropDown" name="savedAddresses">
+              <option value="0">choose an address previously used</option>
               <%results.forEach(element => {%>
-                  <option value="<%=element.id%>"><%=element.line_1 + " " + element.line_2 +  " " + element.city + ", " + element.state + " " + element.zip%></option>
+                  <option value="<%=element.id%>"><%=element.line_1 + ", " + element.line_2 +  ", " + element.city + ", " + element.state + ", " + element.zip%></option>
               <%})%>
             </select>
           </div>
@@ -72,7 +73,7 @@
           <div class="col-md-2">
             <label for="state">State</label>
             <div class="row"></div>
-            <select name="state">
+            <select id='state' name="state">
             	<option value="AL">Alabama</option>
             	<option value="AK">Alaska</option>
             	<option value="AZ">Arizona</option>
@@ -140,3 +141,4 @@
     </form>
   </div><!-- row end  -->
 </div>
+<script src="/javascripts/feScripts.js" charset="utf-8"></script>

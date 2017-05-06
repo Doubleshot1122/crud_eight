@@ -21,3 +21,7 @@ results.forEach(element => {
 <%results.forEach(element => {%>
     <option value="<%=element.id%>"><%=element.line_1 + " " + element.line_2 +  " " + element.city + ", " + element.state + " " + element.zip%></option>
 <%})%>
+
+<%if ($('#addressDropDown').val() > 0) {%>
+  <%=results[$('#addressDropDown').val()].line_1%>
+<%}%>
