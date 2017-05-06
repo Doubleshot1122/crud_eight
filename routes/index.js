@@ -6,4 +6,9 @@ router.get('/', function(req, res, next) {
   res.render('home', { title: 'Address Book' });
 });
 
+router.post('/', (req, res, next) => {
+  console.log(req.body);
+  res.render('home', { title: 'Address Book' });
+});
+
 module.exports = router;
