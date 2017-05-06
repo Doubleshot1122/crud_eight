@@ -4,8 +4,10 @@ var db = require('../db/connections.js');
 
 /* GET users listing. */
 router.get('/new', function(req, res, next) {
-  db('contacts')
-  res.render('contacts/newContact', { title: 'Address Book: New Contact' });
+  db('addresses')
+  .then(results => {
+    res.render('contacts/newContact', { title: 'Address Book: New Contact', results });
+  })
 });
 
 router.delete('/:index', (req, res, next) => {

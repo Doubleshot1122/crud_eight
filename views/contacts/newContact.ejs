@@ -3,7 +3,7 @@
 <div class="container">
   <div class="row">
     <br>
-
+    <p><%= JSON.stringify(results)%></p>
     <br>
     <hr>
   </div>
@@ -46,8 +46,9 @@
             <label for="savedAddresses">Select an Address</label>
             <div class="row"></div>
             <select name="savedAddresses">
-              <option value="1">j;lkj;lkjl;kjl;kjl;;lkjl;kj;lkjlk;</option>
-              <option value="2">Addy-2</option>
+              <%results.forEach(element => {%>
+                  <option value="<%=element.id%>"><%=element.line_1 + " " + element.line_2 +  " " + element.city + ", " + element.state + " " + element.zip%></option>
+              <%})%>
             </select>
           </div>
         </div>
